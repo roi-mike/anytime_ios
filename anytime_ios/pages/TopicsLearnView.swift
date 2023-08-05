@@ -41,9 +41,7 @@ struct TopicsLearnView: View {
                                                 .foregroundColor(.white)
                                                 .padding()
                                                 .background(Color.blue)
-                                                .cornerRadius(10).onAppear{
-                                                    print("DEBUT STARTING SAMUEL")
-                                                }
+                                                .cornerRadius(10)
                 });
                 
                 NavigationLink(destination: {
