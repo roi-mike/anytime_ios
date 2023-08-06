@@ -10,26 +10,36 @@ import SwiftUI
 struct TopicsLearnView: View {
     
     @Binding var currentPage: Page;
+    @State private var stackHeight: CGFloat = 80
+    @State private var changeColor: CGColor = Color.blue.cgColor!
     
     var body: some View {
-        
+        GeometryReader { geometry in
             VStack(alignment: .center ,spacing: 15, content: {
                 
-                HStack(alignment: .top, spacing: 0, content: {
-                    Button(action: {
-                        print("LOG currebtPage LOGO :")
-                        currentPage = Page.topicslearnview
-                    }, label: {
-                        LogoView().padding(.init(top: 0, leading: 10, bottom: 0, trailing: 0))
-                    })
-                    Spacer()
-                    Button(action: {
-                        currentPage = .profilview
-                        print("LOG currebtPage PHOTO :")
-                    }, label: {
-                        ProfileImageView().padding(.init(top: 0, leading: 0, bottom: 00, trailing: 10))
-                    })
-                }).frame(width: UIScreen.main.bounds.width, height: 150, alignment: .bottomTrailing).background(.blue);
+                
+                                HStack(alignment: .top, spacing: 0) {
+                                    Button(action: {
+                                        print("LOG currebtPage LOGO :")
+                                        currentPage = Page.topicslearnview
+                                    }) {
+                                        LogoView().padding(.leading, 10)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        currentPage = .profilview
+                                        print("LOG currebtPage PHOTO :")
+                                    }) {
+                                        ProfileImageView().padding(.trailing, 10)
+                                    }
+                                }
+                                .frame(width: UIScreen.main.bounds.width, height: stackHeight, alignment: .bottomTrailing)
+                                .background(Color.blue).onAppear(perform: {
+                                    withAnimation(.easeInOut(duration: 2), {
+                                        
+                                        stackHeight = 150
+                                    })
+                                })
                 
                 Button(action: {
                     currentPage = Page.listverbsview;
@@ -45,7 +55,7 @@ struct TopicsLearnView: View {
                 Button(action: {
                     currentPage = .listbooksview;
                 }, label: {
-                    Text("Voir la liste des verbes")
+                    Text("Voir la liste des livres à lire")
                                                 .font(.headline)
                                                 .foregroundColor(.white)
                                                 .padding()
@@ -53,6 +63,7 @@ struct TopicsLearnView: View {
                                                 .cornerRadius(10)
                 })
             }).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
+        }
     }
 }
 

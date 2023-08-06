@@ -10,8 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        
-        RouterView(currentPage: .topicslearnview)
+        ZStack(alignment: .top, content: {
+            RouterView(currentPage: .topicslearnview)
+            
+        })
     }
 }
 

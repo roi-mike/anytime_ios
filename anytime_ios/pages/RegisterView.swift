@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
+    @Binding var currentPage: Page
+    
+    
     var body: some View {
         NavigationView{
             VStack(content: {
@@ -19,6 +23,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(currentPage: .constant(.registerview))
     }
 }

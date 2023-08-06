@@ -11,8 +11,13 @@ import SwiftUI
 enum Page {
     case topicslearnview
     case profilview
+    case loginview
+    case registerview
+    case forgetpasswordview
     case listverbsview
     case listbooksview
+    case gettextsListbooksview
+    case getconjugationlistverbsview
 }
 
 
@@ -26,7 +31,7 @@ struct RouterView: View {
         if showSplash {
                     SplashScreenView()
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 withAnimation {
                                     showSplash = false
                                 }
@@ -41,10 +46,21 @@ struct RouterView: View {
                                 TopicsLearnView(currentPage: $currentPage);
                             case .profilview:
                                 ProfilView(currentPage: $currentPage);
+                            case .loginview:
+                                LoginView(currentPage: $currentPage)
+                            case .registerview :
+                                RegisterView(currentPage: $currentPage)
+                            case .forgetpasswordview :
+                                ForgetPasswordView(currentPage: $currentPage)
                             case .listverbsview:
                                 ListVerbsView(currentPage: $currentPage)
                             case .listbooksview:
                                 ListBooksView(currentPage: $currentPage)
+                            case .getconjugationlistverbsview :
+                                GetConjugationListVerbsView(currentPage: $currentPage)
+                            case .gettextsListbooksview :
+                                GetTextsListBooksView(currentPage: $currentPage)
+                                
                             }
                         }
                         .navigationBarHidden(true)
@@ -55,6 +71,6 @@ struct RouterView: View {
 
 struct RouterView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RouterView(currentPage: .topicslearnview)
     }
 }

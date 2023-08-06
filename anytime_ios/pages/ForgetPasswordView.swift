@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ForgetPasswordView: View {
+    
+    @Binding var currentPage: Page
+    
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -19,6 +24,6 @@ struct ForgetPasswordView: View {
 
 struct ForgetPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ForgetPasswordView()
+        ForgetPasswordView(currentPage: .constant(.forgetpasswordview))
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct GetTextsListBooksView: View {
+    
+    @Binding var currentPage: Page;
+    
     var body: some View {
         NavigationView{
             VStack(content: {
@@ -19,6 +22,6 @@ struct GetTextsListBooksView: View {
 
 struct GetTextsListBooksView_Previews: PreviewProvider {
     static var previews: some View {
-        GetTextsListBooksView()
+        GetTextsListBooksView(currentPage: .constant(.gettextsListbooksview))
     }
 }

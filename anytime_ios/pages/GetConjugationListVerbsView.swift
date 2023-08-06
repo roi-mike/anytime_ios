@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct GetConjugationListVerbsView: View {
+    
+    @Binding var currentPage: Page;
+    
+    
+    
     var body: some View {
         NavigationView{
             VStack(content: {
@@ -19,6 +24,6 @@ struct GetConjugationListVerbsView: View {
 
 struct GetConjugationListVerbsView_Previews: PreviewProvider {
     static var previews: some View {
-        GetConjugationListVerbsView()
+        GetConjugationListVerbsView(currentPage: .constant(.getconjugationlistverbsview))
     }
 }
