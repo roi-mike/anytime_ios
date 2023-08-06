@@ -11,8 +11,8 @@ import SwiftUI
 enum Page {
     case topicslearnview
     case profilview
-//    case listverbsview
-//    case listbooksview
+    case listverbsview
+    case listbooksview
 }
 
 
@@ -41,10 +41,10 @@ struct RouterView: View {
                                 TopicsLearnView(currentPage: $currentPage);
                             case .profilview:
                                 ProfilView(currentPage: $currentPage);
-            //                case .listverbsview:
-            //                    ListVerbsView(currentPage: $currentPage)
-            //                case .listbooksview:
-            //                    ListBooksView(currentPage: $currentPage)
+                            case .listverbsview:
+                                ListVerbsView(currentPage: $currentPage)
+                            case .listbooksview:
+                                ListBooksView(currentPage: $currentPage)
                             }
                         }
                         .navigationBarHidden(true)

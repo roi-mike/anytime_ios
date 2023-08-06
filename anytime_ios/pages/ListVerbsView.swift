@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListVerbsView: View {
     
-    
+    @Binding var currentPage: Page;
     
     
     
@@ -18,6 +18,12 @@ struct ListVerbsView: View {
         NavigationView {
             VStack {
                 Text("LISTE VERBE A LIRE")
+                
+                Button(action: {
+                    currentPage = .topicslearnview;
+                }, label: {
+                    Text("RETOURNER DAN ACCUEIL")
+                })
           }
         }
         
@@ -26,6 +32,6 @@ struct ListVerbsView: View {
 
 struct ListVerbsView_Previews: PreviewProvider {
     static var previews: some View {
-        ListVerbsView()
+        ContentView()
     }
 }

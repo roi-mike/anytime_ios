@@ -16,6 +16,12 @@ struct ProfilView: View {
         NavigationView{
             VStack(content: {
                 Text("MON PROFIL ")
+                
+                Button(action: {
+                    currentPage = .topicslearnview;
+                }, label: {
+                    Text("RETOURNER ACCUEIL")
+                })
             })
         }
     }
@@ -23,6 +29,6 @@ struct ProfilView: View {
 
 struct ProfilView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProfilView(currentPage: .constant(.profilview))
     }
 }

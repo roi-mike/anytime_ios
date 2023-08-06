@@ -20,21 +20,19 @@ struct TopicsLearnView: View {
                         print("LOG currebtPage LOGO :")
                         currentPage = Page.topicslearnview
                     }, label: {
-                        LogoView()
-                    }).frame(width: 90, height: 60)
-                    
-                    
+                        LogoView().padding(.init(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    })
+                    Spacer()
                     Button(action: {
                         currentPage = .profilview
                         print("LOG currebtPage PHOTO :")
                     }, label: {
-                        ProfileImageView()
+                        ProfileImageView().padding(.init(top: 0, leading: 0, bottom: 00, trailing: 10))
                     })
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-                }).frame(width: UIScreen.main.bounds.width, height: 80).background(.blue);
+                }).frame(width: UIScreen.main.bounds.width, height: 150, alignment: .bottomTrailing).background(.blue);
                 
-                NavigationLink(destination: {
+                Button(action: {
+                    currentPage = Page.listverbsview;
                 }, label: {
                     Text("Voir la liste des verbes")
                                                 .font(.headline)
@@ -42,9 +40,10 @@ struct TopicsLearnView: View {
                                                 .padding()
                                                 .background(Color.blue)
                                                 .cornerRadius(10)
-                });
+                })
                 
-                NavigationLink(destination: {
+                Button(action: {
+                    currentPage = .listbooksview;
                 }, label: {
                     Text("Voir la liste des verbes")
                                                 .font(.headline)
@@ -61,13 +60,58 @@ struct LogoView: View {
     var body: some View {
         Image("logoapp")
             .resizable()
+            .frame(width: 90, height: 60)
     }
 }
 
 struct ProfileImageView: View {
     var body: some View {
-        Image("profile")
-            .resizable()
+        let coloredCircle = RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.red, lineWidth: 5)
+                    .padding(3)
+                
+                let orangeCircle = coloredCircle
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.orange, lineWidth: 5)
+                            .padding(3)
+                    )
+                
+                let yellowCircle = orangeCircle
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.yellow, lineWidth: 5)
+                            .padding(3)
+                    )
+                
+                let greenCircle = yellowCircle
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.green, lineWidth: 5)
+                            .padding(3)
+                    )
+                
+                let blueCircle = greenCircle
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.blue, lineWidth: 5)
+                            .padding(3)
+                    )
+                
+                let purpleCircle = blueCircle
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.purple, lineWidth: 5)
+                            .padding(3)
+                    )
+                
+                return Image("profile")
+                    .resizable()
+                    .frame(width: 60, height: 70)
+                    .clipShape(Rectangle()).cornerRadius(25)
+                    .overlay(purpleCircle)
+        
+        
     }
 }
 
@@ -76,6 +120,6 @@ struct TopicsLearnView_Previews: PreviewProvider {
     
 
     static var previews: some View {
-        ContentView()
+        TopicsLearnView(currentPage: .constant(.topicslearnview))
     }
 }
