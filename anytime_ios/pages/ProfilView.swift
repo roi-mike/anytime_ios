@@ -44,7 +44,7 @@ struct ProfilView: View {
             
             HStack(alignment: .center, spacing: 0, content: {
                 Button(action: {
-                    
+                    currentPage = .editprofilview;
                 }, label: {
                     Text("Edit Profil")
                 }).frame(width: UIScreen.main.bounds.width / 1.1, height: 50, alignment: .center).background(.gray)

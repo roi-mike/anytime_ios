@@ -11,6 +11,7 @@ import SwiftUI
 enum Page {
     case topicslearnview
     case profilview
+    case editprofilview
     case loginview
     case registerview
     case forgetpasswordview
@@ -26,6 +27,9 @@ struct RouterView: View {
     @State private var showSplash = true
     
     @State public var currentPage: Page;
+    
+    
+    @State public var editprofilfield: EditProfilField = .init(f_name: "", l_name: "", email: "", phone: "");
     
     var body: some View {
         if showSplash {
@@ -46,6 +50,8 @@ struct RouterView: View {
                                 TopicsLearnView(currentPage: $currentPage);
                             case .profilview:
                                 ProfilView(currentPage: $currentPage);
+                            case .editprofilview:
+                                EditProfilView(currentPage: $currentPage, editprofilfield: $editprofilfield)
                             case .loginview:
                                 LoginView(currentPage: $currentPage)
                             case .registerview :

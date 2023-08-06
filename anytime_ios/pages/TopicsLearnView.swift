@@ -13,6 +13,8 @@ struct TopicsLearnView: View {
     @State private var stackHeight: CGFloat = 60
     @State private var changeColorBar: Color = Color.red
     
+    
+    
     var body: some View {
         let colors: [Color] = [.red, .orange, .yellow, .green, .purple];
         
