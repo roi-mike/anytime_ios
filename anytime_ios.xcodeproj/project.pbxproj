@@ -21,6 +21,7 @@
 		E6BCB28A2A7D99BB00DE4C1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCB2892A7D99BB00DE4C1E /* ContentView.swift */; };
 		E6BCB28C2A7D99C400DE4C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28B2A7D99C400DE4C1E /* Assets.xcassets */; };
 		E6BCB28F2A7D99C400DE4C1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28E2A7D99C400DE4C1E /* Preview Assets.xcassets */; };
+		E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B9792A7FA17B00FAB739 /* animation.swift */; };
 		E6EA46A62A7F7C5D008F393E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA46A52A7F7C5D008F393E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		E6BCB2892A7D99BB00DE4C1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6BCB28B2A7D99C400DE4C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BCB28E2A7D99C400DE4C1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E6E5B9792A7FA17B00FAB739 /* animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animation.swift; sourceTree = "<group>"; };
 		E6EA46A52A7F7C5D008F393E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		E6BCB2952A7DA2F200DE4C1E /* services */ = {
 			isa = PBXGroup;
 			children = (
+				E6E5B9792A7FA17B00FAB739 /* animation.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				E67E4ADE2A7EC252000DBC5A /* ProfilView.swift in Sources */,
 				E67E4AE42A7EC294000DBC5A /* GetTextsListBooksView.swift in Sources */,
 				E67E4AE82A7EC2BC000DBC5A /* ForgetPasswordView.swift in Sources */,
+				E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */,
 				E67E4AE22A7EC27A000DBC5A /* ListBooksView.swift in Sources */,
 				E67E4AE02A7EC264000DBC5A /* ListVerbsView.swift in Sources */,
 				E67E4ADA2A7EC22C000DBC5A /* TopicsLearnView.swift in Sources */,

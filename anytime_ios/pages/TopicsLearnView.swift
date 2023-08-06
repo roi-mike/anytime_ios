@@ -10,14 +10,13 @@ import SwiftUI
 struct TopicsLearnView: View {
     
     @Binding var currentPage: Page;
-    @State private var stackHeight: CGFloat = 80
-    @State private var changeColor: CGColor = Color.blue.cgColor!
+    @State private var stackHeight: CGFloat = 60
+    @State private var changeColorBar: Color = Color.red
     
     var body: some View {
-        GeometryReader { geometry in
+        let colors: [Color] = [.red, .orange, .yellow, .green, .purple];
+        
             VStack(alignment: .center ,spacing: 15, content: {
-                
-                
                                 HStack(alignment: .top, spacing: 0) {
                                     Button(action: {
                                         print("LOG currebtPage LOGO :")
@@ -30,17 +29,23 @@ struct TopicsLearnView: View {
                                         currentPage = .profilview
                                         print("LOG currebtPage PHOTO :")
                                     }) {
-                                        ProfileImageView().padding(.trailing, 10)
+                                        ProfileImageView(width: 60, height: 70).padding(.trailing, 10)
                                     }
                                 }
                                 .frame(width: UIScreen.main.bounds.width, height: stackHeight, alignment: .bottomTrailing)
-                                .background(Color.blue).onAppear(perform: {
-                                    withAnimation(.easeInOut(duration: 2), {
-                                        
+                                .background(changeColorBar).onAppear(perform: {
+                                    withAnimation(.easeInOut(duration: 1), {
                                         stackHeight = 150
                                     })
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        withAnimation(.easeInOut(duration: 2)) {
+                                            changeColorBar = colors.randomElement() ?? .purple
+                                        }
+                                        changeColorBar = .blue
+                                    }
+                                    
+                                    
                                 })
-                
                 Button(action: {
                     currentPage = Page.listverbsview;
                 }, label: {
@@ -51,7 +56,6 @@ struct TopicsLearnView: View {
                                                 .background(Color.blue)
                                                 .cornerRadius(10)
                 })
-                
                 Button(action: {
                     currentPage = .listbooksview;
                 }, label: {
@@ -63,7 +67,6 @@ struct TopicsLearnView: View {
                                                 .cornerRadius(10)
                 })
             }).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .top)
-        }
     }
 }
 
@@ -76,6 +79,8 @@ struct LogoView: View {
 }
 
 struct ProfileImageView: View {
+    var width: CGFloat
+    var height: CGFloat
     var body: some View {
         let coloredCircle = RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.red, lineWidth: 5)
@@ -118,7 +123,7 @@ struct ProfileImageView: View {
                 
                 return Image("profile")
                     .resizable()
-                    .frame(width: 60, height: 70)
+                    .frame(width: width, height: height)
                     .clipShape(Rectangle()).cornerRadius(25)
                     .overlay(purpleCircle)
         
@@ -127,9 +132,6 @@ struct ProfileImageView: View {
 }
 
 struct TopicsLearnView_Previews: PreviewProvider {
-    
-    
-
     static var previews: some View {
         TopicsLearnView(currentPage: .constant(.topicslearnview))
     }
