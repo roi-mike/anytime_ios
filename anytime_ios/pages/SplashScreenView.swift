@@ -10,7 +10,7 @@ import SwiftUI
 struct SplashScreenView: View {
     var body: some View {
             VStack(spacing: 0, content: {
-                Text("Splash Screen")
+                Text("Mbozaa")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
