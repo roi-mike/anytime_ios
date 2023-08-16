@@ -6,8 +6,26 @@
 //
 
 import SwiftUI
+import SocketIO
 
 struct ContentView: View {
+    
+    let manager: SocketManager
+        let socket: SocketIOClient
+        
+        init() {
+            manager = SocketManager(socketURL: URL(string: "http://192.168.1.15:3000")!, config: [.log(true), .compress])
+            socket = manager.defaultSocket
+            
+            socket.on(clientEvent: .connect) { data, ack in
+                print("socket connected Iphone")
+            }
+            
+            socket.emit("newMessage", "{socket: 'Depuis un le Iphone...'}");
+            
+            
+            socket.connect()
+        }
     
     var body: some View {
         ZStack(alignment: .top, content: {

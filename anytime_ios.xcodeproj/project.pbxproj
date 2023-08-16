@@ -21,6 +21,7 @@
 		E6BCB28A2A7D99BB00DE4C1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCB2892A7D99BB00DE4C1E /* ContentView.swift */; };
 		E6BCB28C2A7D99C400DE4C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28B2A7D99C400DE4C1E /* Assets.xcassets */; };
 		E6BCB28F2A7D99C400DE4C1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28E2A7D99C400DE4C1E /* Preview Assets.xcassets */; };
+		E6E4314D2A8C61180063D77F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = E6E4314C2A8C61180063D77F /* SocketIO */; };
 		E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B9792A7FA17B00FAB739 /* animation.swift */; };
 		E6E5B97C2A7FB9D100FAB739 /* EditProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97B2A7FB9D100FAB739 /* EditProfilView.swift */; };
 		E6E5B9802A7FC9C700FAB739 /* EditProfilField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E4314D2A8C61180063D77F /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +143,9 @@
 			dependencies = (
 			);
 			name = anytime_ios;
+			packageProductDependencies = (
+				E6E4314C2A8C61180063D77F /* SocketIO */,
+			);
 			productName = anytime_ios;
 			productReference = E6BCB2842A7D99BB00DE4C1E /* anytime_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +174,9 @@
 				Base,
 			);
 			mainGroup = E6BCB27B2A7D99BB00DE4C1E;
+			packageReferences = (
+				E6E4314B2A8C61180063D77F /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = E6BCB2852A7D99BB00DE4C1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6E4314B2A8C61180063D77F /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6E4314C2A8C61180063D77F /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6E4314B2A8C61180063D77F /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6BCB27C2A7D99BB00DE4C1E /* Project object */;
 }
