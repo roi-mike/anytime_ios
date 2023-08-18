@@ -13,6 +13,8 @@ struct TopicsLearnView: View {
     @State private var stackHeight: CGFloat = 60
     @State private var changeColorBar: Color = Color.red
     
+    var isConnected: Bool = false;
+    
     
     
     var body: some View {
@@ -21,18 +23,30 @@ struct TopicsLearnView: View {
             VStack(alignment: .center ,spacing: 15, content: {
                                 HStack(alignment: .top, spacing: 0) {
                                     Button(action: {
-                                        print("LOG currebtPage LOGO :")
-                                        currentPage = Page.topicslearnview
+                                        print("LOG currebtPage LOGO :");
+                                        currentPage = Page.topicslearnview;
                                     }) {
                                         LogoView().padding(.leading, 10)
                                     }
                                     Spacer()
-                                    Button(action: {
-                                        currentPage = .profilview
-                                        print("LOG currebtPage PHOTO :")
-                                    }) {
-                                        ProfileImageView(width: 60, height: 70).padding(.trailing, 10)
+                                    
+                                    if (isConnected){
+                                        Button(action: {
+                                            currentPage = .profilview;
+                                            print("LOG currebtPage PHOTO :");
+                                        }) {
+                                            ProfileImageView(width: 60, height: 70).padding(.trailing, 10);
+                                        }
+                                    }else{
+                                        
+                                        Button(action: {
+                                            print("PUT BUTTON LOGIN");
+                                            currentPage = Page.loginview;
+                                        }, label: {
+                                            LoginBtnView().padding(.leading, 10);
+                                        })
                                     }
+                                    
                                 }
                                 .frame(width: UIScreen.main.bounds.width, height: stackHeight, alignment: .bottomTrailing)
                                 .background(changeColorBar).onAppear(perform: {
@@ -77,6 +91,12 @@ struct LogoView: View {
         Image("logoapp")
             .resizable()
             .frame(width: 90, height: 60)
+    }
+}
+
+struct LoginBtnView: View {
+    var body: some View {
+        Text("Login").foregroundColor(Color.black).fontWeight(.bold).font(.system(size: 20)).frame(width: 90, height: 60)
     }
 }
 

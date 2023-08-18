@@ -17,12 +17,6 @@ struct ContentView: View {
             manager = SocketManager(socketURL: URL(string: "http://192.168.1.15:3000")!, config: [.log(true), .compress])
             socket = manager.defaultSocket
             
-            socket.on(clientEvent: .connect) { data, ack in
-                print("socket connected Iphone")
-            }
-            
-            socket.emit("newMessage", "{socket: 'Depuis un le Iphone...'}");
-            
             
             socket.connect()
         }

@@ -25,6 +25,7 @@
 		E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B9792A7FA17B00FAB739 /* animation.swift */; };
 		E6E5B97C2A7FB9D100FAB739 /* EditProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97B2A7FB9D100FAB739 /* EditProfilView.swift */; };
 		E6E5B9802A7FC9C700FAB739 /* EditProfilField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */; };
+		E6E8DCB32A8FCFA50076E266 /* LoginProfilField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E8DCB22A8FCFA40076E266 /* LoginProfilField.swift */; };
 		E6EA46A62A7F7C5D008F393E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA46A52A7F7C5D008F393E /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		E6E5B9792A7FA17B00FAB739 /* animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animation.swift; sourceTree = "<group>"; };
 		E6E5B97B2A7FB9D100FAB739 /* EditProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilView.swift; sourceTree = "<group>"; };
 		E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilField.swift; sourceTree = "<group>"; };
+		E6E8DCB22A8FCFA40076E266 /* LoginProfilField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfilField.swift; sourceTree = "<group>"; };
 		E6EA46A52A7F7C5D008F393E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				E6E5B9792A7FA17B00FAB739 /* animation.swift */,
 				E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */,
+				E6E8DCB22A8FCFA40076E266 /* LoginProfilField.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				E6E5B9802A7FC9C700FAB739 /* EditProfilField.swift in Sources */,
 				E67E4AE82A7EC2BC000DBC5A /* ForgetPasswordView.swift in Sources */,
 				E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */,
+				E6E8DCB32A8FCFA50076E266 /* LoginProfilField.swift in Sources */,
 				E67E4AE22A7EC27A000DBC5A /* ListBooksView.swift in Sources */,
 				E6E5B97C2A7FB9D100FAB739 /* EditProfilView.swift in Sources */,
 				E67E4AE02A7EC264000DBC5A /* ListVerbsView.swift in Sources */,
