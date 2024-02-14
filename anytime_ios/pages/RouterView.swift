@@ -28,10 +28,11 @@ struct RouterView: View {
     
     @State public var currentPage: Page;
     
-    
     @State public var editprofilfield: EditProfilField = .init(f_name: "", l_name: "", email: "", phone: "");
     
     @State private var loginfield: LoginProfilField = .init(email: "", password: "");
+    
+    @State private var registerprofilfield: RegisterProfilField = .init(first_name: "", last_name: "", email: "", password: "")
     
     var body: some View {
         if showSplash {
@@ -57,7 +58,7 @@ struct RouterView: View {
                             case .loginview:
                                 LoginView(currentPage: $currentPage, loginfield: $loginfield)
                             case .registerview :
-                                RegisterView(currentPage: $currentPage)
+                                RegisterView(currentPage: $currentPage, registerProfilField: $registerprofilfield)
                             case .forgetpasswordview :
                                 ForgetPasswordView(currentPage: $currentPage)
                             case .listverbsview:

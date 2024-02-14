@@ -7,6 +7,48 @@
 
 import SwiftUI
 
+
+
+func logindata(json: [String: Any]){
+    
+    guard let jsonString = convertJSONToString(json: json) else {
+        print("Erreur lors de la conversion JSON en chaîne de caractères")
+        return
+    }
+    
+    guard let url = URL(string: "http://192.168.1.15:3000/authentication/checkloginconnection") else {
+        print("URL invalide")
+        return
+    }
+    
+    let requestData = ["data": jsonString]
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.httpBody = try! JSONSerialization.data(withJSONObject: requestData)
+    
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        guard let data = data, error == nil else {
+            print("Erreur: \(error?.localizedDescription ?? "Inconnu")")
+            return
+        }
+        
+        if let httpResponse = response as? HTTPURLResponse {
+            print("Statut de la réponse: \(httpResponse.statusCode)")
+        }
+        
+        if let responseString = String(data: data, encoding: .utf8) {
+            UserDefaults.standard.set(responseString, forKey: "tokenlogin");
+        }
+    }.resume()
+    
+}
+
+
+
+
+
 struct LoginView: View {
     
     @Binding var currentPage: Page
@@ -16,10 +58,26 @@ struct LoginView: View {
         VStack(spacing: 50, content: {
             Text("Connexion").foregroundColor(Color.gray).fontWeight(.bold).font(.system(size: 25))
             TextField("E-mail", text: $loginfield.email);
-            TextField("Mot de passe", text: $loginfield.password);
+            SecureField("Mot de passe", text: $loginfield.password);
             VStack(spacing: 2, content: {
                 Button(action: {
                     print("CONNEXION BTN")
+                    
+                    let parameters: [String: Any] = [
+                        "email": loginfield.email,
+                        "password": loginfield.password
+                    ]
+                    
+                    logindata(json: parameters);
+                    
+                    print("81 LOCALSTOCKAGE LOGIN \(UserDefaults.standard.string(forKey: "tokenlogin") ?? "")")
+                    
+//                    token_login = UserDefaults.standard.string(forKey: "tokenlogin") ?? ""
+//                    print("90 ELMEENT : \(token_login)")
+                    
+                    
+                    
+                    
                 }, label: {
                     Text("CONNEXION").fontWeight(.bold).foregroundColor(Color.black).frame(width: UIScreen.main.bounds.width - 40, height: 50)
                 }).background(.purple).frame(width: UIScreen.main.bounds.width, height: 70).padding(.horizontal , 20)

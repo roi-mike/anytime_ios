@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62106E42B124AFB008C59F0 /* RegisterProfilField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62106E32B124AFA008C59F0 /* RegisterProfilField.swift */; };
 		E67E4AD82A7EC213000DBC5A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4AD72A7EC213000DBC5A /* SplashScreenView.swift */; };
 		E67E4ADA2A7EC22C000DBC5A /* TopicsLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4AD92A7EC22C000DBC5A /* TopicsLearnView.swift */; };
 		E67E4ADC2A7EC240000DBC5A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E4ADB2A7EC240000DBC5A /* RegisterView.swift */; };
@@ -22,6 +23,7 @@
 		E6BCB28C2A7D99C400DE4C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28B2A7D99C400DE4C1E /* Assets.xcassets */; };
 		E6BCB28F2A7D99C400DE4C1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BCB28E2A7D99C400DE4C1E /* Preview Assets.xcassets */; };
 		E6E4314D2A8C61180063D77F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = E6E4314C2A8C61180063D77F /* SocketIO */; };
+		E6E59F892B18B2D2001DE3E4 /* ProfilRegisterNewCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E59F882B18B2D2001DE3E4 /* ProfilRegisterNewCustomer.swift */; };
 		E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B9792A7FA17B00FAB739 /* animation.swift */; };
 		E6E5B97C2A7FB9D100FAB739 /* EditProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97B2A7FB9D100FAB739 /* EditProfilView.swift */; };
 		E6E5B9802A7FC9C700FAB739 /* EditProfilField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */; };
@@ -30,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E62106E32B124AFA008C59F0 /* RegisterProfilField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfilField.swift; sourceTree = "<group>"; };
 		E67E4AD72A7EC213000DBC5A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E67E4AD92A7EC22C000DBC5A /* TopicsLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsLearnView.swift; sourceTree = "<group>"; };
 		E67E4ADB2A7EC240000DBC5A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		E6BCB2892A7D99BB00DE4C1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E6BCB28B2A7D99C400DE4C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6BCB28E2A7D99C400DE4C1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E6E59F882B18B2D2001DE3E4 /* ProfilRegisterNewCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilRegisterNewCustomer.swift; sourceTree = "<group>"; };
 		E6E5B9792A7FA17B00FAB739 /* animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animation.swift; sourceTree = "<group>"; };
 		E6E5B97B2A7FB9D100FAB739 /* EditProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilView.swift; sourceTree = "<group>"; };
 		E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilField.swift; sourceTree = "<group>"; };
@@ -64,6 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E635598A2B151487005D96CE /* dtos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dtos;
+			sourceTree = "<group>";
+		};
 		E6BCB27B2A7D99BB00DE4C1E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +94,7 @@
 		E6BCB2862A7D99BB00DE4C1E /* anytime_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E635598A2B151487005D96CE /* dtos */,
 				E6BCB2962A7DA2FF00DE4C1E /* pages */,
 				E6BCB2952A7DA2F200DE4C1E /* services */,
 				E6BCB2872A7D99BB00DE4C1E /* anytime_iosApp.swift */,
@@ -107,6 +119,8 @@
 				E6E5B9792A7FA17B00FAB739 /* animation.swift */,
 				E6E5B97F2A7FC9C700FAB739 /* EditProfilField.swift */,
 				E6E8DCB22A8FCFA40076E266 /* LoginProfilField.swift */,
+				E62106E32B124AFA008C59F0 /* RegisterProfilField.swift */,
+				E6E59F882B18B2D2001DE3E4 /* ProfilRegisterNewCustomer.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -209,6 +223,7 @@
 				E6BCB28A2A7D99BB00DE4C1E /* ContentView.swift in Sources */,
 				E67E4ADE2A7EC252000DBC5A /* ProfilView.swift in Sources */,
 				E67E4AE42A7EC294000DBC5A /* GetTextsListBooksView.swift in Sources */,
+				E6E59F892B18B2D2001DE3E4 /* ProfilRegisterNewCustomer.swift in Sources */,
 				E6E5B9802A7FC9C700FAB739 /* EditProfilField.swift in Sources */,
 				E67E4AE82A7EC2BC000DBC5A /* ForgetPasswordView.swift in Sources */,
 				E6E5B97A2A7FA17C00FAB739 /* animation.swift in Sources */,
@@ -221,6 +236,7 @@
 				E6EA46A62A7F7C5D008F393E /* LoginView.swift in Sources */,
 				E67E4AEC2A7EF608000DBC5A /* RouterView.swift in Sources */,
 				E6BCB2882A7D99BB00DE4C1E /* anytime_iosApp.swift in Sources */,
+				E62106E42B124AFB008C59F0 /* RegisterProfilField.swift in Sources */,
 				E67E4AE62A7EC2AA000DBC5A /* GetConjugationListVerbsView.swift in Sources */,
 				E67E4AD82A7EC213000DBC5A /* SplashScreenView.swift in Sources */,
 			);
