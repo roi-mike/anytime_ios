@@ -54,6 +54,8 @@ struct LoginView: View {
     @Binding var currentPage: Page
     @Binding var loginfield: LoginProfilField;
     
+    
+    
     var body: some View {
         VStack(spacing: 50, content: {
             Text("Connexion").foregroundColor(Color.gray).fontWeight(.bold).font(.system(size: 25))
